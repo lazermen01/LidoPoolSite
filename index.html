@@ -18,7 +18,7 @@
       "@context": "https://schema.org",
       "@type": "HealthAndBeautyBusiness",
       "name": "Басейн Лидо",
-      "image": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1600&auto=format&fit=crop",
+      "image": "504721112_1277476681046640_849963051230559021_n.jpg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "ул. Георги Момеков 5",
@@ -37,7 +37,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif; /* Нов, по-модерен шрифт */
+            font-family: 'Montserrat', sans-serif;
         }
         html {
             scroll-behavior: smooth;
@@ -48,12 +48,11 @@
             background-color: #f8fdfc;
         }
         
-        /* ------------------ НОВ ДИЗАЙН НА ХЕДЪРА ------------------ */
+        /* ------------------ ДИЗАЙН НА ХЕДЪРА ------------------ */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            /* Плътен цвят в началото */
             background-color: #004d5c; 
             padding: 1.5rem 5%;
             display: flex;
@@ -63,11 +62,10 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        /* Клас, който се добавя при скролиране (чрез JavaScript) */
         nav.scrolled {
             padding: 0.8rem 5%;
-            background-color: rgba(0, 77, 92, 0.85); /* Полупрозрачен */
-            backdrop-filter: blur(12px); /* Замъгляване на фона зад менюто */
+            background-color: rgba(0, 77, 92, 0.85);
+            backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
         }
@@ -97,7 +95,6 @@
             position: relative;
             padding-bottom: 5px;
         }
-        /* Анимация на линковете в менюто */
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -112,10 +109,11 @@
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Hero Section с ВАШАТА СНИМКА */
         #home {
             height: 100vh;
-            background: linear-gradient(rgba(0, 40, 50, 0.5), rgba(0, 70, 85, 0.7)), url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1600&auto=format&fit=crop') center/cover fixed;
+            /* Тук е добавена вашата снимка */
+            background: linear-gradient(rgba(0, 40, 50, 0.5), rgba(0, 70, 85, 0.7)), url('504721112_1277476681046640_849963051230559021_n.jpg') center/cover fixed;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -396,7 +394,7 @@
 
         /* Мобилна версия */
         @media (max-width: 900px) {
-            .nav-links { display: none; /* Препоръчително е бургер меню за в бъдеще */ }
+            .nav-links { display: none; }
             #home h1 { font-size: 3rem; }
             section { padding: 4rem 5%; }
             .about-content { gap: 2rem; }
@@ -574,7 +572,6 @@
     <script>
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            // Когато скролнете повече от 50 пиксела надолу, добавя класа 'scrolled'
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
