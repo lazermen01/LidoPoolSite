@@ -150,7 +150,7 @@
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             text-align: center;
-            width: 250px; /* Леко намалена ширина, за да събере 4 карти добре */
+            width: 250px;
         }
         .price { font-size: 2rem; color: #0a9396; font-weight: bold; margin: 10px 0; }
         .card ul { list-style: none; padding: 0; margin-top: 1rem; }
@@ -210,12 +210,10 @@
             font-weight: bold;
             color: #005f73;
             font-size: 1.1rem;
-            list-style-type: none; /* Премахва стрелката в някои браузъри */
+            list-style-type: none;
             outline: none;
         }
-        summary::-webkit-details-marker {
-            display: none; /* Премахва стрелката в Chrome/Safari */
-        }
+        summary::-webkit-details-marker { display: none; }
         details p {
             margin-top: 10px;
             color: #555;
@@ -255,13 +253,67 @@
             color: #555;
         }
 
-        /* Футър */
+        /* ПРОФЕСИОНАЛЕН ФУТЪР */
         footer {
             background-color: #005f73;
             color: #fff;
-            text-align: center;
-            padding: 2rem;
+            padding: 4rem 2rem 1.5rem;
             margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 2rem;
+            text-align: left;
+        }
+        .footer-section h3 {
+            color: #94d2bd;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+        .footer-section ul {
+            list-style: none;
+        }
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+        .footer-section a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-section a:hover {
+            color: #94d2bd;
+        }
+        .footer-section p {
+            margin-bottom: 0.8rem;
+            color: #e0fbfc;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+            color: #e0fbfc;
+        }
+        .footer-bottom a.peach-link {
+            color: #94d2bd;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        .footer-bottom a.peach-link:hover {
+            color: #fff;
+            text-decoration: underline;
         }
 
         /* Мобилна версия */
@@ -269,6 +321,10 @@
             .nav-links { display: none; }
             #home h1 { font-size: 2.2rem; }
             .card { width: 100%; }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -408,8 +464,30 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Басейн "Лидо" - Панагюрище | Минерална вода и релакс</p>
-        <p><small>Разработено за GitHub Pages</small></p>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Бързи връзки</h3>
+                <ul>
+                    <li><a href="#home">Начало</a></li>
+                    <li><a href="#prices">Цени и услуги</a></li>
+                    <li><a href="#about">За комплекса</a></li>
+                    <li><a href="#gallery">Галерия</a></li>
+                    <li><a href="#faq">Често задавани въпроси</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Контакти</h3>
+                <p><strong>Телефон:</strong> <a href="tel:+359888000000">+359 888 000 000</a></p>
+                <p><strong>Адрес:</strong> ул. "Георги Момеков" 5<br>гр. Панагюрище, 4500</p>
+                <p><strong>Работно време:</strong> 09:00 - 19:00 ч.</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Басейн "Лидо" - Панагюрище. Всички права запазени.</p>
+            <p>ИЗРАБОТЕНО ОТ <a href="https://peachweblab.com" target="_blank" class="peach-link">PeachWebLab.com</a></p>
+        </div>
     </footer>
 
 </body>
