@@ -88,6 +88,31 @@
             margin-bottom: 3rem;
         }
 
+        /* Бутони "Виж още" */
+        .btn-more-container {
+            text-align: center;
+            margin-top: 3rem;
+            width: 100%;
+        }
+        .btn-more {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: #0a9396;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(10, 147, 150, 0.3);
+        }
+        .btn-more:hover {
+            background-color: #005f73;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 95, 115, 0.4);
+        }
+
         /* За нас */
         .about-content {
             display: flex;
@@ -141,7 +166,7 @@
         }
         .gallery-item:hover { transform: scale(1.03); }
 
-        /* Контакти - Фиксирано центриране */
+        /* Контакти */
         #contact {
             background-color: #fff;
             width: 100%;
@@ -149,7 +174,7 @@
         }
         .contact-container {
             display: flex;
-            justify-content: center; /* Центриране на кутиите хоризонтално */
+            justify-content: center;
             align-items: flex-start;
             flex-wrap: wrap;
             gap: 40px;
@@ -157,7 +182,7 @@
             width: 100%;
         }
         .contact-box {
-            flex: 0 1 250px; /* Позволява на кутиите да имат фиксирана ширина */
+            flex: 0 1 250px;
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -184,7 +209,7 @@
 
         /* Мобилна версия */
         @media (max-width: 768px) {
-            .nav-links { display: none; } /* За мобилни е по-добре да се ползва меню тип "бургер" */
+            .nav-links { display: none; }
             #home h1 { font-size: 2.2rem; }
         }
     </style>
@@ -235,6 +260,9 @@
                 </ul>
             </div>
         </div>
+        <div class="btn-more-container">
+            <a href="#" class="btn-more">Виж всички цени</a>
+        </div>
     </section>
 
     <section id="about">
@@ -249,6 +277,9 @@
                 <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?q=80&w=800&auto=format&fit=crop" alt="Басейн" style="width:100%; border-radius:15px; box-shadow: 10px 10px 0px #0a9396;">
             </div>
         </div>
+        <div class="btn-more-container">
+            <a href="#" class="btn-more">Прочети повече</a>
+        </div>
     </section>
 
     <section id="gallery">
@@ -258,6 +289,9 @@
             <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1590073844006-33379778ae09?q=80&w=400')"></div>
             <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?q=80&w=400')"></div>
             <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1540333563390-622c27d31b62?q=80&w=400')"></div>
+        </div>
+        <div class="btn-more-container">
+            <a href="#" class="btn-more">Разгледай галерията</a>
         </div>
     </section>
 
