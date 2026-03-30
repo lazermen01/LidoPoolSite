@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Басейн Лидо | Панагюрище</title>
+    <title>Басейн Лидо | Панагюрище - Минерална вода</title>
     <style>
-        /* Основни стилове и изчистване */
+        /* Основни стилове */
         * {
             margin: 0;
             padding: 0;
@@ -43,22 +43,24 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 1.2rem;
         }
         .nav-links a {
             color: #fff;
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
             transition: color 0.3s;
+            text-transform: uppercase;
         }
         .nav-links a:hover {
             color: #94d2bd;
         }
 
-        /* Начална страница (Hero Section) */
+        /* Hero Section */
         #home {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 95, 115, 0.7), rgba(0, 95, 115, 0.7)), url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1600&auto=format&fit=crop') center/cover;
+            height: 80vh;
+            background: linear-gradient(rgba(0, 95, 115, 0.6), rgba(0, 95, 115, 0.6)), url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=1600&auto=format&fit=crop') center/cover;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -71,30 +73,12 @@
         #home h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        #home p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-        .btn {
-            padding: 10px 25px;
-            background-color: #0a9396;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-        .btn:hover {
-            background-color: #005f73;
         }
 
-        /* Общи стилове за секциите */
+        /* Общи секции */
         section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
+            padding: 5rem 10% ;
+            max-width: 1400px;
             margin: 0 auto;
         }
         h2.section-title {
@@ -102,98 +86,91 @@
             color: #005f73;
             font-size: 2.5rem;
             margin-bottom: 3rem;
-            position: relative;
-        }
-        h2.section-title::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background-color: #0a9396;
-            display: block;
-            margin: 10px auto 0;
         }
 
         /* За нас */
         .about-content {
             display: flex;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
+            flex-wrap: wrap;
         }
         .about-text {
             flex: 1;
+            min-width: 300px;
             font-size: 1.1rem;
         }
-        .about-image {
-            flex: 1;
-            background-color: #e9ecef;
-            height: 300px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            background: url('https://images.unsplash.com/photo-1534008897995-27a23e859048?q=80&w=800&auto=format&fit=crop') center/cover;
+        .highlight {
+            color: #0a9396;
+            font-weight: bold;
         }
 
         /* Цени */
-        #prices {
-            background-color: #e0fbfc;
-            max-width: 100%;
-        }
+        #prices { background-color: #e0fbfc; max-width: 100%; }
         .price-cards {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
             flex-wrap: wrap;
         }
         .card {
             background: #fff;
             padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
             text-align: center;
-            width: 300px;
+            width: 280px;
+        }
+        .price { font-size: 2rem; color: #0a9396; font-weight: bold; margin: 10px 0; }
+        .card ul { list-style: none; padding: 0; margin-top: 1rem; }
+        .card li { padding: 8px 0; border-bottom: 1px solid #eee; }
+
+        /* Галерия */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .gallery-item {
+            height: 200px;
+            background-color: #ddd;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
             transition: transform 0.3s;
         }
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        .card h3 {
-            color: #005f73;
-            margin-bottom: 1rem;
-        }
-        .price {
-            font-size: 2rem;
-            color: #0a9396;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-        .card ul {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-        .card ul li {
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid #f1f1f1;
-            padding-bottom: 0.5rem;
-        }
+        .gallery-item:hover { transform: scale(1.03); }
 
-        /* Контакти */
-        .contact-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 2rem;
+        /* Контакти - Фиксирано центриране */
+        #contact {
+            background-color: #fff;
+            width: 100%;
             text-align: center;
         }
-        .contact-info div {
-            margin-bottom: 1.5rem;
+        .contact-container {
+            display: flex;
+            justify-content: center; /* Центриране на кутиите хоризонтално */
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 0 auto;
+            width: 100%;
         }
-        .contact-info h3 {
+        .contact-box {
+            flex: 0 1 250px; /* Позволява на кутиите да имат фиксирана ширина */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-box h3 {
             color: #005f73;
-            margin-bottom: 0.5rem;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .contact-box p {
+            margin: 5px 0;
+            color: #555;
         }
 
         /* Футър */
@@ -201,108 +178,113 @@
             background-color: #005f73;
             color: #fff;
             text-align: center;
-            padding: 1.5rem;
+            padding: 2rem;
+            margin-top: 2rem;
         }
 
         /* Мобилна версия */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* За по-опростен вид на мобилни, може да се добави бургер меню по-късно */
-            }
-            .about-content {
-                flex-direction: column;
-            }
-            #home h1 {
-                font-size: 2.5rem;
-            }
+            .nav-links { display: none; } /* За мобилни е по-добре да се ползва меню тип "бургер" */
+            #home h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#home" class="logo">Лидо</a>
+        <a href="#home" class="logo">ЛИДО</a>
         <ul class="nav-links">
             <li><a href="#home">Начало</a></li>
-            <li><a href="#about">За нас</a></li>
             <li><a href="#prices">Цени</a></li>
+            <li><a href="#about">За нас</a></li>
+            <li><a href="#gallery">Галерия</a></li>
             <li><a href="#contact">Контакти</a></li>
         </ul>
     </nav>
 
     <header id="home">
-        <h1>Добре дошли в Басейн Лидо</h1>
-        <p>Вашият оазис за прохлада, релакс и забавления в сърцето на Панагюрище.</p>
-        <a href="#prices" class="btn">Вижте цените</a>
+        <h1>Басейн Лидо</h1>
+        <p>Насладете се на лековитата сила на природата</p>
     </header>
 
-    <section id="about">
-        <h2 class="section-title">За нас</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Басейн "Лидо" е предпочитаното място за отдих през горещите летни дни в Панагюрище. Ние предлагаме кристално чиста вода, комфортни шезлонги и сенчести чадъри за вашия пълен релакс.</p>
-                <br>
-                <p>Комплексът разполага с голям басейн за възрастни, безопасен детски басейн за най-малките ни гости и летен бар, където можете да се насладите на освежаващи коктейли и студени напитки.</p>
-            </div>
-            <div class="about-image"></div>
-        </div>
-    </section>
-
     <section id="prices">
-        <h2 class="section-title">Цени и Услуги</h2>
+        <h2 class="section-title">Цени</h2>
         <div class="price-cards">
             <div class="card">
                 <h3>Възрастни</h3>
                 <div class="price">15 лв.</div>
                 <ul>
                     <li>Вход за цял ден</li>
-                    <li>Ползване на басейн</li>
-                    <li>Съблекални и душове</li>
+                    <li>Минерален басейн</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Деца (до 12 г.)</h3>
+                <h3>Деца</h3>
                 <div class="price">8 лв.</div>
                 <ul>
-                    <li>Вход за цял ден</li>
-                    <li>Достъп до детски басейн</li>
-                    <li>Детски кът</li>
+                    <li>Достъп до детски кът</li>
+                    <li>Детски басейн</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>Екстри</h3>
+                <h3>Шезлонг</h3>
                 <div class="price">5 лв.</div>
                 <ul>
-                    <li>Шезлонг</li>
-                    <li>Чадър</li>
-                    <li>VIP Зона (попитайте на място)</li>
+                    <li>Шезлонг и чадър</li>
+                    <li>Целодневна резервация</li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">За нас</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Комплекс "Лидо" е истинско бижу в Панагюрище. Нашият басейн е изпълнен с <span class="highlight">естествена минерална вода</span>, известна със своите релаксиращи и благоприятни свойства за здравето.</p>
+                <br>
+                <p>Предлагаме на нашите гости спокойна атмосфера, модерен летен бар и кристално чиста топла вода, подходяща както за плуване, така и за почивка с цялото семейство.</p>
+            </div>
+            <div style="flex:1; min-width:300px;">
+                <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?q=80&w=800&auto=format&fit=crop" alt="Басейн" style="width:100%; border-radius:15px; box-shadow: 10px 10px 0px #0a9396;">
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title">Галерия</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1560090500-7433a4d21058?q=80&w=400')"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1590073844006-33379778ae09?q=80&w=400')"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?q=80&w=400')"></div>
+            <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1540333563390-622c27d31b62?q=80&w=400')"></div>
         </div>
     </section>
 
     <section id="contact">
         <h2 class="section-title">Контакти</h2>
         <div class="contact-container">
-            <div class="contact-info">
-                <h3>Адрес</h3>
+            <div class="contact-box">
+                <h3>📍 Адрес</h3>
+                <p>ул. "Георги Момеков" 5</p>
                 <p>гр. Панагюрище</p>
-                <p>ул. [Име на улицата] № [Номер]</p>
             </div>
-            <div class="contact-info">
-                <h3>Телефон</h3>
-                <p><a href="tel:+359888123456" style="text-decoration: none; color: inherit;">+359 888 123 456</a></p>
+            <div class="contact-box">
+                <h3>📞 Телефон</h3>
+                <p>+359 888 000 000</p>
+                <p>Резервации на шезлонги</p>
             </div>
-            <div class="contact-info">
-                <h3>Работно време</h3>
-                <p>Понеделник - Неделя</p>
+            <div class="contact-box">
+                <h3>⏰ Работно време</h3>
+                <p>Всеки ден</p>
                 <p>09:00 - 19:00 ч.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Басейн Лидо - Панагюрище. Всички права запазени.</p>
+        <p>&copy; 2026 Басейн "Лидо" - Панагюрище | Минерална вода и релакс</p>
+        <p><small>Разработено за GitHub Pages</small></p>
     </footer>
 
 </body>
