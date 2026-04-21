@@ -71,15 +71,17 @@
         }
 
         .logo {
-            color: #fff;
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: 2px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            text-decoration: none;
         }
+        
+        /* Стил за новото лого */
+        .logo img {
+            max-height: 50px; /* Регулирайте височината на логото по ваше желание */
+            width: auto;
+        }
+
         .nav-links {
             list-style: none;
             display: flex;
@@ -405,7 +407,9 @@
 <body>
 
     <nav id="navbar">
-        <a href="#home" class="logo">ЛИДО</a>
+        <a href="#home" class="logo">
+            <img src="lidologo1.png" alt="Лого Лидо">
+        </a>
         <ul class="nav-links">
             <li><a href="#home">Начало</a></li>
             <li><a href="#prices">Цени</a></li>
@@ -472,7 +476,7 @@
                     <p>Предлагаме на нашите гости спокойна атмосфера, модерен летен бар и кристално чиста топла вода. Създали сме идеалното място както за активно плуване, така и за пълноценна почивка с цялото семейство.</p>
                 </div>
                 <div class="about-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1534008897995-27a23e859048?q=80&w=800&auto=format&fit=crop" alt="Хора се забавляват в басейн с минерална вода Лидо">
+                    <img src="lidopoolabout.jpeg" alt="Хора се забавляват в басейн с минерална вода Лидо">
                 </div>
             </article>
             <div class="btn-more-container">
