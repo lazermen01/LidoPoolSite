@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Басейн Лидо | Панагюрище - Минерална вода и Релакс</title>
-    <meta name="description" content="Басейн Лидо в Панагюрище предлага топла минерална вода, детски кът, летен бар и пълен релакс. Вижте нашите цени, галерия и работно време.">
-    <meta name="keywords" content="басейн Лидо, Панагюрище, минерална вода, басейн цени, плаж Панагюрище, минерален басейн, летен отдих">
+    <meta name="description" content="Заповядайте в Басейн Лидо в Панагюрище! Насладете се на топла минерална вода, детски кът, летен бар и пълен релакс. Разгледайте нашите цени и галерия.">
+    <meta name="keywords" content="басейн Лидо, Панагюрище, минерална вода, басейн цени, плаж Панагюрище, минерален басейн, летен отдих, топъл басейн">
     <meta name="author" content="Басейн Лидо">
+    <link rel="canonical" href="https://vashiqt-domein.com/"> <link rel="icon" type="image/png" href="lidologo1.png">
+    <link rel="apple-touch-icon" href="lidologo1.png"> <meta property="og:type" content="website">
+    <meta property="og:title" content="Басейн Лидо | Панагюрище - Минерална вода и Релакс">
+    <meta property="og:description" content="Идеалното място за вашия летен релакс в Панагюрище. Топла минерална вода и отлични условия за цялото семейство.">
+    <meta property="og:image" content="lidopoolabout.jpeg"> <meta property="og:url" content="https://vashiqt-domein.com/">
+    <meta property="og:locale" content="bg_BG">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +24,8 @@
       "@context": "https://schema.org",
       "@type": "HealthAndBeautyBusiness",
       "name": "Басейн Лидо",
-      "image": "504721112_1277476681046640_849963051230559021_n.jpg",
+      "image": "lidopoolabout.jpeg",
+      "logo": "lidologo1.png",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "ул. Георги Момеков 5",
@@ -27,371 +34,100 @@
       },
       "telephone": "+359888000000",
       "openingHours": "Mo-Su 09:00-19:00",
-      "description": "Комплекс Лидо предлага басейн с минерална вода в Панагюрище."
+      "description": "Комплекс Лидо предлага басейн с лековита топла минерална вода в град Панагюрище."
     }
     </script>
 
     <style>
         /* Основни стилове */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            line-height: 1.6;
-            color: #2c3e50;
-            background-color: #f8fdfc;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { line-height: 1.6; color: #2c3e50; background-color: #f8fdfc; }
         
         /* ------------------ ДИЗАЙН НА ХЕДЪРА ------------------ */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #004d5c; 
-            padding: 1.5rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        nav.scrolled {
-            padding: 0.8rem 5%;
-            background-color: rgba(0, 77, 92, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        }
+        nav { position: fixed; top: 0; width: 100%; background-color: #004d5c; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        nav.scrolled { padding: 0.8rem 5%; background-color: rgba(0, 77, 92, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { max-height: 50px; width: auto; }
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #94d2bd; transition: width 0.3s ease; }
+        .nav-links a:hover::after { width: 100%; }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-        
-        /* Стил за новото лого */
-        .logo img {
-            max-height: 50px; /* Регулирайте височината на логото по ваше желание */
-            width: auto;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            padding-bottom: 5px;
-        }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #94d2bd;
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section с ВАШАТА СНИМКА */
-        #home {
-            height: 100vh;
-            /* Тук е добавена вашата снимка */
-            background: linear-gradient(rgba(0, 40, 50, 0.5), rgba(0, 70, 85, 0.7)), url('504721112_1277476681046640_849963051230559021_n.jpg') center/cover fixed;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 0 20px;
-        }
-        #home h1 {
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        #home p {
-            font-size: 1.3rem;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
+        /* Hero Section */
+        #home { height: 100vh; background: linear-gradient(rgba(0, 40, 50, 0.5), rgba(0, 70, 85, 0.7)), url('504721112_1277476681046640_849963051230559021_n.jpg') center/cover fixed; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; }
+        #home h1 { font-size: 4.5rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        #home p { font-size: 1.3rem; font-weight: 300; letter-spacing: 1px; }
 
         /* Общи секции */
-        section {
-            padding: 6rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        h2.section-title {
-            text-align: center;
-            color: #004d5c;
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 3.5rem;
-            position: relative;
-        }
-        h2.section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: #0a9396;
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
+        section { padding: 6rem 5%; max-width: 1400px; margin: 0 auto; }
+        h2.section-title { text-align: center; color: #004d5c; font-size: 2.8rem; font-weight: 700; margin-bottom: 3.5rem; position: relative; }
+        h2.section-title::after { content: ''; display: block; width: 80px; height: 4px; background: #0a9396; margin: 15px auto 0; border-radius: 2px; }
 
-        /* Подобрени Бутони */
-        .btn-more-container {
-            text-align: center;
-            margin-top: 3.5rem;
-            width: 100%;
-        }
-        .btn-more {
-            display: inline-block;
-            padding: 14px 40px;
-            background: linear-gradient(135deg, #0a9396, #005f73);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 20px rgba(10, 147, 150, 0.3);
-            border: 2px solid transparent;
-        }
-        .btn-more:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0, 95, 115, 0.4);
-            background: linear-gradient(135deg, #005f73, #004d5c);
-        }
+        /* Бутони */
+        .btn-more-container { text-align: center; margin-top: 3.5rem; width: 100%; }
+        .btn-more { display: inline-block; padding: 14px 40px; background: linear-gradient(135deg, #0a9396, #005f73); color: #fff; text-decoration: none; border-radius: 50px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; transition: all 0.3s ease; box-shadow: 0 8px 20px rgba(10, 147, 150, 0.3); border: 2px solid transparent; }
+        .btn-more:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0, 95, 115, 0.4); background: linear-gradient(135deg, #005f73, #004d5c); }
 
-        /* Подобрени Цени */
+        /* Цени */
         #prices { background-color: #e9f5f5; max-width: 100%; }
-        .price-cards {
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            flex-wrap: wrap;
-        }
-        .card {
-            background: #fff;
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            text-align: center;
-            width: 260px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #f0f0f0;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(10, 147, 150, 0.15);
-        }
+        .price-cards { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+        .card { background: #fff; padding: 2.5rem 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; width: 260px; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #f0f0f0; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(10, 147, 150, 0.15); }
         .card h3 { font-size: 1.4rem; color: #2c3e50; }
         .price { font-size: 2.5rem; color: #0a9396; font-weight: 700; margin: 15px 0; }
         .card ul { list-style: none; padding: 0; margin-top: 1.5rem; }
         .card li { padding: 10px 0; border-bottom: 1px solid #f1f1f1; color: #555; }
         .card li:last-child { border-bottom: none; }
 
-        /* Подобрено За нас */
-        .about-content {
-            display: flex;
-            gap: 4rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-            font-size: 1.15rem;
-            color: #444;
-            line-height: 1.8;
-        }
-        .highlight {
-            color: #0a9396;
-            font-weight: 700;
-        }
-        .about-image-wrapper {
-            flex: 1;
-            min-width: 300px;
-            position: relative;
-        }
-        .about-image-wrapper img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            transition: transform 0.5s ease;
-        }
-        .about-image-wrapper:hover img {
-            transform: scale(1.02);
-        }
+        /* За нас */
+        .about-content { display: flex; gap: 4rem; align-items: center; flex-wrap: wrap; }
+        .about-text { flex: 1; min-width: 300px; font-size: 1.15rem; color: #444; line-height: 1.8; }
+        .highlight { color: #0a9396; font-weight: 700; }
+        .about-image-wrapper { flex: 1; min-width: 300px; position: relative; }
+        .about-image-wrapper img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); transition: transform 0.5s ease; }
+        .about-image-wrapper:hover img { transform: scale(1.02); }
 
-        /* Подобрена Галерия */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .gallery-item {
-            height: 250px;
-            border-radius: 15px;
-            background-size: cover;
-            background-position: center;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .gallery-item::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 77, 92, 0);
-            transition: background 0.4s ease;
-        }
+        /* Галерия */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .gallery-item { height: 250px; border-radius: 15px; background-size: cover; background-position: center; transition: all 0.4s ease; position: relative; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .gallery-item::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 77, 92, 0); transition: background 0.4s ease; }
         .gallery-item:hover { transform: scale(1.03); z-index: 2; box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
         .gallery-item:hover::after { background: rgba(0, 77, 92, 0.2); }
 
-        /* Често задавани въпроси (FAQ) */
-        #faq {
-            background-color: #f0f9f9;
-            max-width: 100%;
-        }
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        details {
-            background-color: #fff;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            padding: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+        /* FAQ */
+        #faq { background-color: #f0f9f9; max-width: 100%; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        details { background-color: #fff; border-radius: 10px; margin-bottom: 15px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); cursor: pointer; transition: all 0.3s ease; }
         details:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
-        summary {
-            font-weight: 600;
-            color: #004d5c;
-            font-size: 1.15rem;
-            list-style-type: none;
-            outline: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+        summary { font-weight: 600; color: #004d5c; font-size: 1.15rem; list-style-type: none; outline: none; display: flex; justify-content: space-between; align-items: center; }
         summary::-webkit-details-marker { display: none; }
-        summary::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: #0a9396;
-            transition: transform 0.3s ease;
-        }
+        summary::after { content: '+'; font-size: 1.5rem; color: #0a9396; transition: transform 0.3s ease; }
         details[open] summary::after { transform: rotate(45deg); }
-        details p {
-            margin-top: 15px;
-            color: #555;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-            line-height: 1.7;
-        }
+        details p { margin-top: 15px; color: #555; padding-top: 15px; border-top: 1px solid #eee; line-height: 1.7; }
 
         /* Контакти */
         #contact { background-color: #fff; text-align: center; }
-        .contact-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 30px;
-            width: 100%;
-        }
-        .contact-box {
-            flex: 1;
-            min-width: 250px;
-            max-width: 350px;
-            padding: 30px;
-            background: #fdfdfd;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
-            transition: transform 0.3s ease;
-        }
+        .contact-container { display: flex; justify-content: center; align-items: flex-start; flex-wrap: wrap; gap: 30px; width: 100%; }
+        .contact-box { flex: 1; min-width: 250px; max-width: 350px; padding: 30px; background: #fdfdfd; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.04); transition: transform 0.3s ease; }
         .contact-box:hover { transform: translateY(-5px); }
         .contact-box h3 { color: #004d5c; margin-bottom: 15px; font-size: 1.4rem; font-weight: 700;}
         .contact-box p { color: #555; margin-bottom: 8px; font-size: 1.05rem; }
 
-        /* ПРОФЕСИОНАЛЕН ФУТЪР */
-        footer {
-            background-color: #002e38;
-            color: #fff;
-            padding: 5rem 5% 2rem;
-            font-size: 0.95rem;
-        }
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            max-width: 1200px;
-            margin: 0 auto;
-            gap: 3rem;
-        }
+        /* ФУТЪР */
+        footer { background-color: #002e38; color: #fff; padding: 5rem 5% 2rem; font-size: 0.95rem; }
+        .footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; gap: 3rem; }
         .footer-section { flex: 1; min-width: 250px; }
-        .footer-section h3 {
-            color: #94d2bd;
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
+        .footer-section h3 { color: #94d2bd; font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600; letter-spacing: 1px; }
         .footer-section ul { list-style: none; }
         .footer-section ul li { margin-bottom: 1rem; }
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s, padding-left 0.3s;
-        }
+        .footer-section a { color: #ccc; text-decoration: none; transition: color 0.3s, padding-left 0.3s; }
         .footer-section a:hover { color: #fff; padding-left: 5px; }
         .footer-section p { margin-bottom: 1rem; color: #ccc; line-height: 1.8; }
         .footer-section p strong { color: #fff; }
-        
-        .footer-bottom {
-            text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #888;
-        }
+        .footer-bottom { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #888; }
         .footer-bottom p { margin-bottom: 0.5rem; }
-        .footer-bottom a.peach-link {
-            color: #94d2bd;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
+        .footer-bottom a.peach-link { color: #94d2bd; font-weight: 700; text-decoration: none; letter-spacing: 1px; transition: color 0.3s; }
         .footer-bottom a.peach-link:hover { color: #fff; }
 
         /* Мобилна версия */
@@ -408,7 +144,7 @@
 
     <nav id="navbar">
         <a href="#home" class="logo">
-            <img src="lidologo1.png" alt="Лого Лидо">
+            <img src="lidologo1.png" alt="Басейн Лидо Панагюрище - Лого">
         </a>
         <ul class="nav-links">
             <li><a href="#home">Начало</a></li>
@@ -476,7 +212,7 @@
                     <p>Предлагаме на нашите гости спокойна атмосфера, модерен летен бар и кристално чиста топла вода. Създали сме идеалното място както за активно плуване, така и за пълноценна почивка с цялото семейство.</p>
                 </div>
                 <div class="about-image-wrapper">
-                    <img src="lidopoolabout.jpeg" alt="Хора се забавляват в басейн с минерална вода Лидо">
+                    <img src="lidopoolabout.jpeg" alt="Хора се наслаждават на топлата минерална вода в басейн Лидо Панагюрище">
                 </div>
             </article>
             <div class="btn-more-container">
