@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>За нас | Басейн с минерална вода Лидо - Панагюрище</title>
+    <meta name="description" content="Научете повече за Басейн Лидо в Панагюрище. Комплекс с лековита минерална вода, детски басейн, летен бар и отлични условия за релакс и почивка.">
+    <meta name="keywords" content="за нас басейн Лидо, минерална вода Панагюрище, лековита вода, детски басейн, почивка Панагюрище, комплекс Лидо">
+    <meta name="author" content="Басейн Лидо">
+    <link rel="canonical" href="https://lido.bg/about.html"> 
+    <link rel="icon" type="image/png" href="lidopoollogo.png">
+    <link rel="apple-touch-icon" href="lidopoollogo.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="За нас | Басейн Лидо - Панагюрище">
+    <meta property="og:description" content="Открийте вашето място за релакс. Минерална вода, лятно настроение и удобства за цялото семейство.">
+    <meta property="og:image" content="lidopoolabout.jpeg"> 
+    <meta property="og:url" content="https://lido.bg/about.html">
+    <meta property="og:locale" content="bg_BG">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Основни стилове */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { line-height: 1.6; color: #2c3e50; background-color: #f8fdfc; overflow-x: hidden; }
+        
+        nav { position: fixed; top: 0; width: 100%; background-color: #004d5c; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        nav.scrolled { padding: 0.8rem 5%; background-color: rgba(0, 77, 92, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .logo { display: flex; align-items: center; text-decoration: none; z-index: 1002; }
+        .logo img { max-height: 85px; width: auto; transition: max-height 0.3s ease; }
+        nav.scrolled .logo img { max-height: 65px; }
+
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #94d2bd; transition: width 0.3s ease; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .hamburger { display: none; cursor: pointer; color: #fff; font-size: 1.8rem; z-index: 1002; transition: transform 0.3s ease; }
+        .hamburger.active { transform: rotate(90deg); color: #94d2bd; }
+
+        /* Малък Header за вътрешна страница */
+        #page-header { height: 45vh; background: linear-gradient(rgba(0, 40, 50, 0.6), rgba(0, 70, 85, 0.8)), url('504721112_1277476681046640_849963051230559021_n.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; margin-top: 0; }
+        #page-header h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        /* Стил за "За нас" страницата */
+        .about-page-container { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 5rem; }
+        .about-row { display: flex; gap: 4rem; align-items: center; }
+        .about-text-col { flex: 1; min-width: 300px; }
+        .about-text-col h2 { color: #004d5c; font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; position: relative; }
+        .about-text-col h2::after { content: ''; display: block; width: 60px; height: 4px; background: #0a9396; margin-top: 10px; border-radius: 2px; }
+        .about-text-col p { font-size: 1.15rem; color: #444; margin-bottom: 1.5rem; line-height: 1.8; }
+        .about-image-col { flex: 1; min-width: 300px; position: relative; }
+        .about-image-col img { width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .highlight { color: #0a9396; font-weight: 700; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .feature-box { background: #fff; padding: 2.5rem 2rem; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid #0a9396; transition: transform 0.3s ease; }
+        .feature-box:hover { transform: translateY(-10px); }
+        .feature-box i { font-size: 2.8rem; color: #0a9396; margin-bottom: 1.5rem; }
+        .feature-box h3 { color: #004d5c; margin-bottom: 1rem; font-size: 1.3rem; font-weight: 600; }
+        .feature-box p { color: #666; font-size: 1rem; }
+
+        footer { background-color: #002e38; color: #fff; padding: 5rem 5% 2rem; font-size: 0.95rem; }
+        .footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; gap: 3rem; }
+        .footer-section { flex: 1; min-width: 250px; }
+        .footer-section h3 { color: #94d2bd; font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 1rem; }
+        .footer-section a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section a:hover { color: #fff; padding-left: 5px; }
+        .footer-section p { margin-bottom: 1rem; color: #ccc; }
+        .footer-section p strong { color: #fff; }
+        .footer-bottom { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #888; }
+        .footer-bottom a.peach-link { color: #94d2bd; font-weight: 700; text-decoration: none; }
+
+        @media (max-width: 900px) {
+            .hamburger { display: block; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background-color: rgba(0, 77, 92, 0.98); backdrop-filter: blur(10px); flex-direction: column; justify-content: center; align-items: center; transition: right 0.4s ease-in-out; z-index: 1001; }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 1.5rem 0; }
+            #page-header h1 { font-size: 2.5rem; }
+            .about-row { flex-direction: column; text-align: center; }
+            .about-text-col h2::after { margin: 10px auto; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">
+            <img src="lidopoollogo.png" alt="Басейн Лидо Панагюрище - Лого">
+        </a>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Начало</a></li>
+            <li><a href="prices.html">Цени и Меню</a></li>
+            <li><a href="about.html" class="active">За нас</a></li>
+            <li><a href="index.html#gallery">Галерия</a></li>
+            <li><a href="index.html#contact">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <header id="page-header">
+        <h1>За комплекса</h1>
+    </header>
+
+    <main class="about-page-container">
+        
+        <div class="about-row">
+            <div class="about-text-col">
+                <h2>Вашето място за релакс</h2>
+                <p>Комплекс "Лидо" е разположен в сърцето на град Панагюрище. Ние сме посветени на това да ви предоставим перфектното място за бягство от градския шум, където можете да се насладите на спокойствие, слънчеви лъчи и кристално чиста вода.</p>
+                <p>Нашият басейн е изцяло захранван от <span class="highlight">минерална вода</span>, известна със своите доказани лечебни свойства. Тя е изключително полезна за профилактика на опорно-двигателния апарат, периферната нервна система и за цялостно възстановяване от ежедневния стрес.</p>
+            </div>
+            <div class="about-image-col">
+                <img src="lidopoolabout.jpeg" alt="Басейн Лидо Панагюрище минерална вода" loading="lazy">
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <i class="fas fa-water"></i>
+                <h3>Минерална вода</h3>
+                <p>Топла и лековита вода, която тонизира тялото и духа.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-child"></i>
+                <h3>Детски басейн</h3>
+                <p>Безопасна зона с малка дълбочина за игри на най-малките.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-cocktail"></i>
+                <h3>Летен Бар</h3>
+                <p>Свежи коктейли, разхладителни напитки и вкусна скара.</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-parking"></i>
+                <h3>Безплатен паркинг</h3>
+                <p>Удобство за всички наши гости в непосредствена близост.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Бързи връзки</h3>
+                <ul>
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="prices.html">Цени и Меню</a></li>
+                    <li><a href="about.html">За комплекса</a></li>
+                    <li><a href="index.html#gallery">Галерия</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Контакти</h3>
+                <p><strong>Телефон:</strong> <br><a href="tel:+359886666844">088 666 6844</a></p>
+                <p><strong>Адрес:</strong> <br>ул. "Георги Момеков" 5<br>гр. Панагюрище, 4500</p>
+            </div>
+            <div class="footer-section">
+                <h3>Работно време</h3>
+                <p><strong>Понеделник - Неделя</strong><br>09:00 - 19:00 ч.</p>
+                <p>Очакваме ви за един незабравим ден изпълнен с релакс!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Басейн "Лидо" - Панагюрище. Всички права запазени.</p>
+            <p>ИЗРАБОТЕНО ОТ <a href="https://peachweblab.com" target="_blank" class="peach-link">PeachWebLab.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); } 
+            else { navbar.classList.remove('scrolled'); }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const links = document.querySelectorAll('.nav-links li a');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
