@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Цени и Лятно Меню | Басейн Лидо Панагюрище</title>
+    <meta name="description" content="Вижте актуалните цени за вход, шезлонги и чадъри в Басейн Лидо. Разгледайте нашето лятно меню - студени напитки, вкусна скара, коктейли и детско меню.">
+    <meta name="keywords" content="цени басейн Панагюрище, вход басейн Лидо, лятно меню басейн, скара басейн Панагюрище, детско меню, напитки, коктейли">
+    <meta name="author" content="Басейн Лидо">
+    <link rel="canonical" href="https://lido.bg/prices.html"> 
+    <link rel="icon" type="image/png" href="lidopoollogo.png">
+    <link rel="apple-touch-icon" href="lidopoollogo.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Цени и Лятно Меню | Басейн Лидо Панагюрище">
+    <meta property="og:description" content="Разгледайте цените за вход и нашето богато лятно меню с храни и напитки.">
+    <meta property="og:image" content="lidopoolabout.jpeg"> 
+    <meta property="og:url" content="https://lido.bg/prices.html">
+    <meta property="og:locale" content="bg_BG">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Същите основни стилове като на началната страница */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { line-height: 1.6; color: #2c3e50; background-color: #f8fdfc; overflow-x: hidden; }
+        
+        nav { position: fixed; top: 0; width: 100%; background-color: #004d5c; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        nav.scrolled { padding: 0.8rem 5%; background-color: rgba(0, 77, 92, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .logo { display: flex; align-items: center; text-decoration: none; z-index: 1002; }
+        .logo img { max-height: 85px; width: auto; transition: max-height 0.3s ease; }
+        nav.scrolled .logo img { max-height: 65px; }
+
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #94d2bd; transition: width 0.3s ease; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .hamburger { display: none; cursor: pointer; color: #fff; font-size: 1.8rem; z-index: 1002; transition: transform 0.3s ease; }
+        .hamburger.active { transform: rotate(90deg); color: #94d2bd; }
+
+        /* Малък Header за вътрешна страница */
+        #page-header { height: 45vh; background: linear-gradient(rgba(0, 40, 50, 0.6), rgba(0, 70, 85, 0.8)), url('504721112_1277476681046640_849963051230559021_n.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; margin-top: 0; }
+        #page-header h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        section { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; }
+        h2.section-title { text-align: center; color: #004d5c; font-size: 2.8rem; font-weight: 700; margin-bottom: 3.5rem; position: relative; }
+        h2.section-title::after { content: ''; display: block; width: 80px; height: 4px; background: #0a9396; margin: 15px auto 0; border-radius: 2px; }
+
+        /* Цени */
+        #prices { background-color: #e9f5f5; max-width: 100%; }
+        .price-cards { display: flex; justify-content: center; gap: 2.5rem; flex-wrap: wrap; }
+        .card { background: #fff; padding: 2.5rem 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; width: 260px; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #f0f0f0; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(10, 147, 150, 0.15); }
+        .card h3 { font-size: 1.4rem; color: #2c3e50; }
+        .price { font-size: 2.5rem; color: #0a9396; font-weight: 700; margin: 15px 0; }
+        .card ul { list-style: none; padding: 0; margin-top: 1.5rem; }
+        .card li { padding: 10px 0; border-bottom: 1px solid #f1f1f1; color: #555; }
+        .card li:last-child { border-bottom: none; }
+
+        /* Меню Галерия */
+        .menu-gallery-container { display: flex; flex-direction: column; gap: 40px; align-items: center; max-width: 900px; margin: 0 auto; }
+        .menu-img-wrapper { width: 100%; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease; background: #fff; padding: 10px; }
+        .menu-img-wrapper:hover { transform: scale(1.02); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+        .menu-img-wrapper img { width: 100%; height: auto; display: block; border-radius: 10px; }
+        .menu-title { text-align: center; color: #004d5c; font-size: 1.8rem; margin-bottom: 15px; font-weight: 600; }
+
+        footer { background-color: #002e38; color: #fff; padding: 5rem 5% 2rem; font-size: 0.95rem; }
+        .footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; gap: 3rem; }
+        .footer-section { flex: 1; min-width: 250px; }
+        .footer-section h3 { color: #94d2bd; font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 1rem; }
+        .footer-section a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section a:hover { color: #fff; padding-left: 5px; }
+        .footer-section p { margin-bottom: 1rem; color: #ccc; }
+        .footer-section p strong { color: #fff; }
+        .footer-bottom { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #888; }
+        .footer-bottom a.peach-link { color: #94d2bd; font-weight: 700; text-decoration: none; }
+
+        @media (max-width: 900px) {
+            .hamburger { display: block; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background-color: rgba(0, 77, 92, 0.98); backdrop-filter: blur(10px); flex-direction: column; justify-content: center; align-items: center; transition: right 0.4s ease-in-out; z-index: 1001; }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 1.5rem 0; }
+            #page-header h1 { font-size: 2.5rem; }
+            section { padding: 4rem 20px; }
+            .card { width: 100%; max-width: 350px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">
+            <img src="lidopoollogo.png" alt="Басейн Лидо Панагюрище - Лого">
+        </a>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Начало</a></li>
+            <li><a href="prices.html" class="active">Цени и Меню</a></li>
+            <li><a href="index.html#about">За нас</a></li>
+            <li><a href="index.html#gallery">Галерия</a></li>
+            <li><a href="index.html#contact">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <header id="page-header">
+        <h1>Цени и Меню</h1>
+    </header>
+
+    <main>
+        <section id="prices">
+            <h2 class="section-title">Цени на басейна</h2>
+            <div class="price-cards">
+                <div class="card">
+                    <h3>Възрастни</h3>
+                    <div class="price">8 €</div>
+                    <ul><li>Вход за цял ден</li><li>Минерален басейн</li></ul>
+                </div>
+                <div class="card">
+                    <h3>Деца</h3>
+                    <div class="price">4 €</div>
+                    <ul><li>Достъп до детски кът</li><li>Детски басейн</li></ul>
+                </div>
+                <div class="card">
+                    <h3>Шезлонг</h3>
+                    <div class="price">2.50 €</div>
+                    <ul><li>Единичен шезлонг</li><li>Целодневна резервация</li></ul>
+                </div>
+                <div class="card">
+                    <h3>Чадър</h3>
+                    <div class="price">2 €</div>
+                    <ul><li>Голям чадър</li><li>Целодневна резервация</li></ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu">
+            <h2 class="section-title">Летен Бар и Храна</h2>
+            <div class="menu-gallery-container">
+                <div>
+                    <h3 class="menu-title">Храна и Скара</h3>
+                    <div class="menu-img-wrapper">
+                        <img src="menufood.jpg" alt="Меню храна и скара - Басейн Лидо Панагюрище" loading="lazy">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="menu-title">Напитки и Коктейли</h3>
+                    <div class="menu-img-wrapper">
+                        <img src="menudrinks.jpg" alt="Меню напитки и коктейли - Басейн Лидо Панагюрище" loading="lazy">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="menu-title">Детско Меню</h3>
+                    <div class="menu-img-wrapper">
+                        <img src="lidomenukids.jpg" alt="Детско меню - Басейн Лидо Панагюрище" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Бързи връзки</h3>
+                <ul>
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="prices.html">Цени и Меню</a></li>
+                    <li><a href="index.html#about">За комплекса</a></li>
+                    <li><a href="index.html#gallery">Галерия</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Контакти</h3>
+                <p><strong>Телефон:</strong> <br><a href="tel:+359886666844">088 666 6844</a></p>
+                <p><strong>Адрес:</strong> <br>ул. "Георги Момеков" 5<br>гр. Панагюрище, 4500</p>
+            </div>
+            <div class="footer-section">
+                <h3>Работно време</h3>
+                <p><strong>Понеделник - Неделя</strong><br>09:00 - 19:00 ч.</p>
+                <p>Очакваме ви за един незабравим ден изпълнен с релакс!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Басейн "Лидо" - Панагюрище. Всички права запазени.</p>
+            <p>ИЗРАБОТЕНО ОТ <a href="https://peachweblab.com" target="_blank" class="peach-link">PeachWebLab.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); } 
+            else { navbar.classList.remove('scrolled'); }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const links = document.querySelectorAll('.nav-links li a');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
