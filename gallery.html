@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Галерия | Басейн Лидо - Панагюрище</title>
+    <meta name="description" content="Разгледайте галерията със снимки на Басейн Лидо в Панагюрище. Вижте нашия минерален басейн, детския кът, летния бар и условията за пълен релакс.">
+    <meta name="keywords" content="снимки басейн Лидо, галерия басейн Панагюрище, минерален басейн снимки, летен бар Лидо, релакс">
+    <meta name="author" content="Басейн Лидо">
+    <link rel="canonical" href="https://lido.bg/gallery.html"> 
+    <link rel="icon" type="image/png" href="lidopoollogo.png">
+    <link rel="apple-touch-icon" href="lidopoollogo.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Галерия | Басейн Лидо - Панагюрище">
+    <meta property="og:description" content="Разгледайте снимки от нашия комплекс с минерална вода.">
+    <meta property="og:image" content="lidopoolabout.jpeg"> 
+    <meta property="og:url" content="https://lido.bg/gallery.html">
+    <meta property="og:locale" content="bg_BG">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Основни стилове */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { line-height: 1.6; color: #2c3e50; background-color: #f8fdfc; overflow-x: hidden; }
+        
+        nav { position: fixed; top: 0; width: 100%; background-color: #004d5c; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        nav.scrolled { padding: 0.8rem 5%; background-color: rgba(0, 77, 92, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .logo { display: flex; align-items: center; text-decoration: none; z-index: 1002; }
+        .logo img { max-height: 85px; width: auto; transition: max-height 0.3s ease; }
+        nav.scrolled .logo img { max-height: 65px; }
+
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #94d2bd; transition: width 0.3s ease; }
+        .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+        .hamburger { display: none; cursor: pointer; color: #fff; font-size: 1.8rem; z-index: 1002; transition: transform 0.3s ease; }
+        .hamburger.active { transform: rotate(90deg); color: #94d2bd; }
+
+        /* Малък Header за вътрешна страница */
+        #page-header { height: 45vh; background: linear-gradient(rgba(0, 40, 50, 0.6), rgba(0, 70, 85, 0.8)), url('504721112_1277476681046640_849963051230559021_n.jpg') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; margin-top: 0; }
+        #page-header h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+
+        .gallery-container { padding: 5rem 5%; max-width: 1400px; margin: 0 auto; }
+        
+        /* ГАЛЕРИЯ - МРЕЖА С ЕДНАКВИ КУТИИ */
+        .photo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+        
+        .photo-box { 
+            width: 100%; 
+            aspect-ratio: 4 / 3; /* Прави всички кутии с еднакви пропорции */
+            overflow: hidden; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            cursor: pointer; 
+            position: relative;
+        }
+        
+        .photo-box img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; /* Изрязва перфектно без да разтяга или смачква снимката */
+            transition: transform 0.4s ease; 
+        }
+        
+        .photo-box::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 77, 92, 0); transition: background 0.4s ease; pointer-events: none; }
+        .photo-box:hover img { transform: scale(1.08); }
+        .photo-box:hover::after { background: rgba(0, 77, 92, 0.2); }
+
+        /* LIGHTBOX ЕКРАН */
+        .lightbox { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+        .lightbox.active { display: flex; opacity: 1; }
+        .lightbox-content { max-width: 90%; max-height: 85vh; border-radius: 10px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); object-fit: contain; user-select: none; }
+        
+        .close-btn { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 45px; font-weight: bold; cursor: pointer; transition: color 0.3s; z-index: 2001; }
+        .close-btn:hover { color: #94d2bd; }
+        
+        .prev-btn, .next-btn { cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); width: 60px; height: 60px; color: white; font-weight: bold; font-size: 30px; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); border-radius: 50%; transition: 0.3s ease; user-select: none; z-index: 2001; }
+        .prev-btn { left: 20px; }
+        .next-btn { right: 20px; }
+        .prev-btn:hover, .next-btn:hover { background-color: rgba(10, 147, 150, 0.8); color: #fff; }
+
+        footer { background-color: #002e38; color: #fff; padding: 5rem 5% 2rem; font-size: 0.95rem; margin-top: 2rem; }
+        .footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; gap: 3rem; }
+        .footer-section { flex: 1; min-width: 250px; }
+        .footer-section h3 { color: #94d2bd; font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 1rem; }
+        .footer-section a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section a:hover { color: #fff; padding-left: 5px; }
+        .footer-section p { margin-bottom: 1rem; color: #ccc; }
+        .footer-section p strong { color: #fff; }
+        .footer-bottom { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #888; }
+        .footer-bottom a.peach-link { color: #94d2bd; font-weight: 700; text-decoration: none; }
+
+        @media (max-width: 900px) {
+            .hamburger { display: block; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background-color: rgba(0, 77, 92, 0.98); backdrop-filter: blur(10px); flex-direction: column; justify-content: center; align-items: center; transition: right 0.4s ease-in-out; z-index: 1001; }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 1.5rem 0; }
+            #page-header h1 { font-size: 2.5rem; }
+            .photo-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+            .prev-btn, .next-btn { width: 40px; height: 40px; font-size: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">
+            <img src="lidopoollogo.png" alt="Басейн Лидо Панагюрище - Лого">
+        </a>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Начало</a></li>
+            <li><a href="prices.html">Цени и Меню</a></li>
+            <li><a href="about.html">За нас</a></li>
+            <li><a href="gallery.html" class="active">Галерия</a></li>
+            <li><a href="contact.html">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <header id="page-header">
+        <h1>Галерия</h1>
+    </header>
+
+    <main class="gallery-container">
+        <div class="photo-grid">
+            <div class="photo-box"><img src="lidopool1.jpg" alt="Басейн Лидо снимка 1" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool2.jpg" alt="Басейн Лидо снимка 2" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool3.jpg" alt="Басейн Лидо снимка 3" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool4.jpeg" alt="Басейн Лидо снимка 4" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool5.jpeg" alt="Басейн Лидо снимка 5" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool6.jpeg" alt="Басейн Лидо снимка 6" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool7.jpeg" alt="Басейн Лидо снимка 7" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool8.jpeg" alt="Басейн Лидо снимка 8" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool9.jpg" alt="Басейн Лидо снимка 9" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool10.jpg" alt="Басейн Лидо снимка 10" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool11.jpg" alt="Басейн Лидо снимка 11" class="gallery-img"></div>
+            <div class="photo-box"><img src="lidopool12.jpg" alt="Басейн Лидо снимка 12" class="gallery-img"></div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" id="close-lightbox">&times;</span>
+        <div class="prev-btn" id="prev-btn">&#10094;</div>
+        <img class="lightbox-content" id="lightbox-img" src="">
+        <div class="next-btn" id="next-btn">&#10095;</div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Бързи връзки</h3>
+                <ul>
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="prices.html">Цени и Меню</a></li>
+                    <li><a href="about.html">За комплекса</a></li>
+                    <li><a href="gallery.html">Галерия</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Контакти</h3>
+                <p><strong>Телефон:</strong> <br><a href="tel:+359886666844">088 666 6844</a></p>
+                <p><strong>Адрес:</strong> <br>ул. "Георги Момеков" 5<br>гр. Панагюрище, 4500</p>
+            </div>
+            <div class="footer-section">
+                <h3>Работно време</h3>
+                <p><strong>Понеделник - Неделя</strong><br>09:00 - 19:00 ч.</p>
+                <p>Очакваме ви за един незабравим ден изпълнен с релакс!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Басейн "Лидо" - Панагюрище. Всички права запазени.</p>
+            <p>ИЗРАБОТЕНО ОТ <a href="https://peachweblab.com" target="_blank" class="peach-link">PeachWebLab.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Скрипт за Навигацията (Скрол и Хамбургер)
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); } 
+            else { navbar.classList.remove('scrolled'); }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const links = document.querySelectorAll('.nav-links li a');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // СКРИПТ ЗА ГАЛЕРИЯТА (Lightbox)
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const images = document.querySelectorAll('.gallery-img');
+        const closeBtn = document.getElementById('close-lightbox');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        let currentIndex = 0;
+
+        // Отваряне на снимка
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentIndex = index;
+                lightboxImg.src = images[currentIndex].src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        // Затваряне
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+        }
+        closeBtn.addEventListener('click', closeLightbox);
+        
+        // Затваряне при клик извън снимката
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) { closeLightbox(); }
+        });
+
+        // Смяна на снимки (Ляво / Дясно)
+        function changeImage(direction) {
+            currentIndex += direction;
+            if (currentIndex >= images.length) { currentIndex = 0; } // Отива на първата, ако сме на последната
+            if (currentIndex < 0) { currentIndex = images.length - 1; } // Отива на последната, ако сме на първата
+            lightboxImg.src = images[currentIndex].src;
+        }
+
+        nextBtn.addEventListener('click', () => changeImage(1));
+        prevBtn.addEventListener('click', () => changeImage(-1));
+
+        // Управление с клавиатурата (Стрелки и Escape)
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'ArrowRight') { changeImage(1); }
+                if (e.key === 'ArrowLeft') { changeImage(-1); }
+                if (e.key === 'Escape') { closeLightbox(); }
+            }
+        });
+    </script>
+</body>
+</html>
