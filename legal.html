@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Правни политики и Общи условия | Басейн Лидо Панагюрище</title>
+    <meta name="description" content="Политика за поверителност, бисквитки и общи условия за ползване на услугите на Басейн Лидо, гр. Панагюрище.">
+    <meta name="robots" content="noindex, nofollow"> <link rel="canonical" href="https://lido.bg/legal"> 
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
+        body { line-height: 1.6; color: #2c3e50; background-color: #f8fdfc; overflow-x: hidden; }
+        
+        nav { position: fixed; top: 0; width: 100%; background-color: #004d5c; padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        nav.scrolled { padding: 0.8rem 5%; background-color: rgba(0, 77, 92, 0.95); backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        .logo { display: flex; align-items: center; text-decoration: none; z-index: 1002; flex-shrink: 0; }
+        .logo img { height: 90px; width: 180px; object-fit: fill; transition: all 0.3s ease; }
+        nav.scrolled .logo img { height: 65px; width: 130px; }
+
+        .nav-links { list-style: none; display: flex; gap: 2rem; }
+        .nav-links a { color: #fff; text-decoration: none; font-weight: 500; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; position: relative; padding-bottom: 5px; }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: 0; left: 0; background-color: #94d2bd; transition: width 0.3s ease; }
+        .nav-links a:hover::after { width: 100%; }
+
+        .hamburger { display: none; cursor: pointer; color: #fff; font-size: 1.8rem; z-index: 1002; }
+
+        #page-header { height: 35vh; background: linear-gradient(rgba(0, 40, 50, 0.8), rgba(0, 70, 85, 0.9)); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; padding: 0 20px; margin-top: 0; }
+        #page-header h1 { font-size: 2.8rem; font-weight: 700; margin-top: 60px; letter-spacing: 1px; }
+
+        section { padding: 4rem 5%; max-width: 1000px; margin: 0 auto; background: #fff; box-shadow: 0 5px 30px rgba(0,0,0,0.03); border-radius: 15px; margin-top: -30px; position: relative; z-index: 10; margin-bottom: 5rem; }
+        
+        .legal-content h2 { color: #004d5c; font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #e9f5f5; padding-bottom: 10px; }
+        .legal-content h2:first-child { margin-top: 0; }
+        .legal-content p { margin-bottom: 1.2rem; color: #555; font-size: 1.05rem; }
+        .legal-content ul { margin-bottom: 1.5rem; padding-left: 20px; color: #555; }
+        .legal-content li { margin-bottom: 0.5rem; }
+        .legal-content strong { color: #2c3e50; }
+        .legal-content a { color: #0a9396; text-decoration: none; font-weight: bold; }
+        .legal-content a:hover { text-decoration: underline; }
+
+        footer { background-color: #002e38; color: #fff; padding: 5rem 5% 2rem; font-size: 0.95rem; }
+        .footer-container { display: flex; justify-content: space-between; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; gap: 3rem; }
+        .footer-section { flex: 1; min-width: 250px; }
+        .footer-section h3 { color: #94d2bd; font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 1rem; }
+        .footer-section a { color: #ccc; text-decoration: none; transition: color 0.3s; }
+        .footer-section a:hover { color: #fff; padding-left: 5px; }
+        .footer-bottom { text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #888; }
+        .footer-bottom a.peach-link { color: #94d2bd; font-weight: 700; text-decoration: none; }
+
+        @media (max-width: 900px) {
+            .hamburger { display: block; }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; background-color: rgba(0, 77, 92, 0.98); backdrop-filter: blur(10px); flex-direction: column; justify-content: center; align-items: center; transition: right 0.4s ease-in-out; z-index: 1001; }
+            .nav-links.active { right: 0; }
+            .nav-links li { margin: 1.5rem 0; }
+            #page-header h1 { font-size: 2rem; }
+            section { padding: 2rem 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="/" class="logo">
+            <img src="lidopoollogo.png" alt="Басейн Лидо Панагюрище - Лого">
+        </a>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="/">Начало</a></li>
+            <li><a href="/prices">Цени и Меню</a></li>
+            <li><a href="/about">За нас</a></li>
+            <li><a href="/gallery">Галерия</a></li>
+            <li><a href="/contact">Контакти</a></li>
+        </ul>
+    </nav>
+
+    <header id="page-header">
+        <h1>Политика за поверителност и Общи условия</h1>
+    </header>
+
+    <main>
+        <section class="legal-content">
+            
+            <h2>1. Данни за Търговеца</h2>
+            <p>Настоящият уебсайт <strong>lido.bg</strong> се управлява от <strong>[ИМЕ НА ФИРМАТА ООД/ЕООД]</strong>, регистрирано в Търговския регистър към Агенция по вписванията с <strong>ЕИК: [НАПИШИ ЕИК ТУК]</strong>.</p>
+            <ul>
+                <li><strong>Седалище и адрес на управление:</strong> гр. Панагюрище, [ПЪЛЕН АДРЕС НА ФИРМАТА]</li>
+                <li><strong>Адрес на обекта (Басейн Лидо):</strong> гр. Панагюрище, ул. Георги Момеков 5</li>
+                <li><strong>Телефон за контакт:</strong> 088 666 6844</li>
+                <li><strong>Имейл:</strong> [ТВОЯТ ИМЕЙЛ, НАПР. office@lido.bg]</li>
+            </ul>
+
+            <h2>2. Политика за поверителност и защита на личните данни (GDPR)</h2>
+            <p>Ние уважаваме Вашата поверителност и се ангажираме да защитаваме личните Ви данни. Събираме минимален обем информация, необходим за нормалното функциониране на сайта и за обратна връзка с Вас.</p>
+            <p><strong>Какви данни събираме?</strong></p>
+            <ul>
+                <li>Данни, предоставени доброволно от Вас (име, телефон, имейл) при обаждане или изпращане на запитване.</li>
+                <li>Автоматизирани данни за посещенията (IP адрес, тип браузър, устройство) чрез инструменти като Google Analytics, с цел подобряване на нашите услуги.</li>
+            </ul>
+            <p><strong>Вашите права:</strong> Имате право по всяко време да поискате достъп до Вашите данни, тяхното коригиране или изтриване (правото "да бъдеш забравен"), като се свържете с нас на посочените контакти.</p>
+
+            <h2>3. Политика за бисквитките (Cookies)</h2>
+            <p>Този уебсайт използва "бисквитки" (cookies) – малки текстови файлове, които се запазват на Вашето устройство. Те ни помагат да разберем как използвате сайта и да Ви осигурим по-добро преживяване.</p>
+            <ul>
+                <li><strong>Строго необходими бисквитки:</strong> Нужни за правилното функциониране на сайта.</li>
+                <li><strong>Аналитични бисквитки:</strong> Използваме услуги на трети страни (напр. Google), които могат да поставят бисквитки за отчитане на трафика анонимно.</li>
+            </ul>
+            <p>Можете да контролирате и изтривате бисквитките чрез настройките на Вашия браузър по всяко време.</p>
+
+            <h2>4. Общи условия и правила за комплекса</h2>
+            <p>Използвайки този уебсайт и посещавайки Басейн "Лидо", Вие се съгласявате със следните правила:</p>
+            <ul>
+                <li>Обявените цени в уебсайта са с информативна цел. Управата на комплекса си запазва правото да променя цените и услугите без предварително известие в сайта.</li>
+                <li>Посетителите носят пълна лична отговорност за своите ценности и лични вещи по време на престоя си в комплекса.</li>
+                <li>Деца под 14 години трябва задължително да бъдат придружени от възрастен, който носи отговорност за тяхната безопасност в и около басейна.</li>
+                <li>Управата си запазва правото да откаже достъп на лица, нарушаващи обществения ред или правилата за хигиена.</li>
+            </ul>
+
+            <h2>5. Надзорни органи</h2>
+            <p>В случай на нарушени права, имате право да подадете жалба до следните надзорни органи в Република България:</p>
+            <ul>
+                <li><strong>Комисия за защита на личните данни (КЗЛД):</strong> гр. София 1592, бул. „Проф. Цветан Лазаров” № 2, уебсайт: <a href="https://www.cpdp.bg" target="_blank">www.cpdp.bg</a></li>
+                <li><strong>Комисия за защита на потребителите (КЗП):</strong> гр. София 1000, пл. „Славейков” № 4А, уебсайт: <a href="https://www.kzp.bg" target="_blank">www.kzp.bg</a></li>
+            </ul>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Бързи връзки</h3>
+                <ul>
+                    <li><a href="/">Начало</a></li>
+                    <li><a href="/prices">Цени и Меню</a></li>
+                    <li><a href="/about">За комплекса</a></li>
+                    <li><a href="/gallery">Галерия</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Контакти</h3>
+                <p><strong>Телефон:</strong> <br><a href="tel:+359886666844">088 666 6844</a></p>
+                <p><strong>Адрес:</strong> <br>ул. "Георги Момеков" 5<br>гр. Панагюрище, 4500</p>
+            </div>
+            <div class="footer-section">
+                <h3>Работно време</h3>
+                <p><strong>Понеделник - Неделя</strong><br>09:00 - 19:00 ч.</p>
+                <p>Очакваме ви за един незабравим ден изпълнен с релакс!</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Басейн "Лидо" - Панагюрище. Всички права запазени.</p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">
+                <a href="/legal" style="color: #ccc; text-decoration: underline;">Политика за поверителност и Общи условия</a>
+            </p>
+            <p style="margin-top: 15px;">ИЗРАБОТЕНО ОТ <a href="https://peachweblab.com" target="_blank" class="peach-link">PeachWebLab.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) { navbar.classList.add('scrolled'); } 
+            else { navbar.classList.remove('scrolled'); }
+        });
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        const links = document.querySelectorAll('.nav-links li a');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
